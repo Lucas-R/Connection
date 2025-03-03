@@ -1,0 +1,15 @@
+FROM node:18-alpine
+
+ARG DOCKERFILE_SERVER_PORT
+
+WORKDIR /api
+
+COPY package*.json ./
+
+RUN npm install && npm install -g nodemon
+
+COPY . .
+
+EXPOSE $DOCKERFILE_SERVER_PORT
+
+CMD ["npm", "run", "dev"]

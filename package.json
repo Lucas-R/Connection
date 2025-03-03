@@ -1,0 +1,12 @@
+{
+  "name": "connect",
+  "version": "1.0.0",
+  "description": "System...",
+  "scripts": {
+    "prod": "docker compose --env-file .env.prod up --build -d",
+    "dev": "docker compose --env-file .env.dev up --build -d"
+  },
+  "keywords": [],
+  "author": "Lucas Rodrigues",
+  "license": "ISC"
+}

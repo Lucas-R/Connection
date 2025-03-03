@@ -1,0 +1,19 @@
+services:
+  api:
+    container_name: conn_api
+    build:
+      context: ./api
+      dockerfile: Dockerfile.${DOKCER_STAGE}
+      args:
+        DOCKERFILE_SERVER_PORT: ${SERVER_PORT}
+        
+    ports:
+      - ${HOST_PORT}:${SERVER_PORT}
+    environment:
+      API_SERVER_PORT: ${SERVER_PORT}
+      API_SERVER_HOST: ${SERVER_HOST}
+    volumes:
+      - ./api/src:/api/src
+      - /app/node_modules
+    command: npm run dev
+    
