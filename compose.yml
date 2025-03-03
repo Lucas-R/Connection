@@ -12,6 +12,9 @@ services:
     environment:
       API_SERVER_PORT: ${SERVER_PORT}
       API_SERVER_HOST: ${SERVER_HOST}
+      TWILIO_ACCOUNT_SID: ${TWILIO_ACCOUNT_SID}
+      TWILIO_AUTH_TOKEN: ${TWILIO_AUTH_TOKEN}
+      TWILIO_PHONE_NUMBER: ${TWILIO_PHONE_NUMBER}
     volumes:
       - ./api/src:/api/src
       - /app/node_modules
